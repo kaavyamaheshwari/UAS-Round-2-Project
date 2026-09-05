@@ -11,6 +11,7 @@ Problem Overview
 A UAV surveys a mass-casualty site and returns a color-coded image where:
 
 Black regions — non-traversable obstacles
+
 Three shades of green — traversable terrain at increasing elevation levels
 Orange triangle — rover's starting position
 Purple triangle — final destination (safe zone)
@@ -19,6 +20,7 @@ Colored shapes (circle / star / square) — casualties, where shape encodes age 
 The rover must plan a route through traversable terrain, visit casualties in an order that maximizes total path score, and reach the safe zone — while the program also computes travel time and ranks multiple site images by score and time.
 
 Features Implemented So Far
+
 Image ingestion with OpenCV — loading and inspecting the input segmentation images
 Color-based masking — isolating obstacles (black regions) and the water body (blue ellipse) using tuned BGR/HSV thresholds
 Background-difference thresholding — instead of standard grayscale thresholding, the program computes each pixel's distance from the known background color. This was necessary because the bright green background has low contrast with some shape colors under plain grayscale thresholding, which caused shapes (like the orange/purple triangles) to be missed
